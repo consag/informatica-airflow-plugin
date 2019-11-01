@@ -1,0 +1,1 @@
+from informatica_plugin.blueprints.trigger_dag import TriggerBlueprint
