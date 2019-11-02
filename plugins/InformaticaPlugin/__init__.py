@@ -1,7 +1,4 @@
-from __future__ import division, absolute_import, print_function
-
 from airflow.plugins_manager import AirflowPlugin
-
 from informatica_plugin import blueprints
 from informatica_plugin.operators.execute_mapping import ExecuteMapping
 
@@ -12,7 +9,7 @@ from informatica_plugin.operators.execute_scorecard import ExecuteScorecard
 
 
 class InformaticaPlugin(AirflowPlugin):
-    name = "informatica_plugin"
+    name = "InformaticaPlugin"
     operators = [
         ExecuteMapping,
         ExecuteProfile,

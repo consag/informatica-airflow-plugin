@@ -1,10 +1,9 @@
-from airflow import models
+from airflow.models import BaseOperator
 from airflow import utils as airflow_utils
 
 from execution import runMapping
 
-
-class ExecuteMapping(models.BaseOperator):
+class ExecuteMapping(BaseOperator):
 
     @airflow_utils.apply_defaults
     def __init__(self, application_name, mapping_name, **kwargs):
