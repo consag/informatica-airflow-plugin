@@ -5,10 +5,10 @@ from airflow import models
 from airflow import utils as airflow_utils
 
 
-class RunScorecard(models.BaseOperator):
+class ExecuteProfile(models.BaseOperator):
     @airflow_utils.apply_defaults
     def __init__(self, **kwargs):
-        super(RunScorecard, self).__init__(
+        super(ExecuteProfile, self).__init__(
             task_id='run_scorecard',
             **kwargs)
 

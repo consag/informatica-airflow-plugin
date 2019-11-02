@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 
 from airflow import DAG
 
-from informatica_plugin import RunMapping
+from informatica_plugin import ExecuteMapping
 
 dag_id = "run_mapping"
 schedule_interval = None
@@ -29,8 +29,10 @@ dag = DAG(
     schedule_interval=schedule_interval,
     default_args=default_args)
 
-mapping = RunMapping(
+mapping = ExecuteMapping(
     task_id = "task_testmapping",
+    application_name ="APP_TestScheduler",
+    mapping_name = "m_SchedulerTest1",
     dag=dag
 )
 
