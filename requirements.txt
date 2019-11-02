@@ -1,6 +1,8 @@
+--extra-index-url https://testpypi.python.org/pypi
+informatica-airflow-plugin>=0.0.2
 Blueprints==2.3.0.2
 cryptography==2.8
-devops-informatica-tools==0.9.2
+#devops-informatica-tools==0.9.2
 marshmallow==2.19.5
 marshmallow-enum==1.5.1
 marshmallow-sqlalchemy==0.18.0

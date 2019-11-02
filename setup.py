@@ -19,12 +19,16 @@ with open('plugins/__init__.py', 'rb') as f:
             if not m:
                result_search = _version_re.search(line)
                version = result_search.group(1)
-#               print("version is >" + version + "<.")
+               print("version is >" + version + "<.")
+               main_version, sub_version, fix_version = version.split(".")
+               fix_number = int(fix_version) + 1
+               new_version = main_version +"." + sub_version + "." + str(fix_number)
+               print("version will be >" + new_version + "<.")
  
 
 setuptools.setup(
     name='informatica-airflow-plugin',
-    version=version,
+    version=new_version,
     author='Jac. Beekers',
     author_email='beekersjac@gmail.com',
     description='Airflow Plugin for Informatica Platform',
