@@ -32,8 +32,6 @@ with open(version_file, 'rb') as f:
                     out_line ='__version__ = ' + new_version + '\n'
                     t.write(out_line.encode('utf-8'))
 
- 
-
 setuptools.setup(
     name='informatica-airflow-plugin',
     version=new_version,
