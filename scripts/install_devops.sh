@@ -1,2 +1,2 @@
-docker exec airflow pip install /usr/local/airflow/devops-informatica-tools
+docker exec airflow pip install --user -i https://test.pypi.org/simple/ informatica-airflow-plugin==0.0.2
 
