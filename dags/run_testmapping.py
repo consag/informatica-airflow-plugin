@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 
 from airflow import DAG
 
-from informatica_plugin import ExecuteMapping
+from InformaticaPlugin import ExecuteMapping
 
 dag_id = "run_mapping"
 schedule_interval = None

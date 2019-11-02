@@ -1,11 +1,11 @@
 from airflow.plugins_manager import AirflowPlugin
-from informatica_plugin import blueprints
-from informatica_plugin.operators.execute_mapping import ExecuteMapping
+from InformaticaPlugin import blueprints
+from InformaticaPlugin.operators.execute_mapping import ExecuteMapping
 
 
 # Defining the plugin class
-from informatica_plugin.operators.execute_profile import ExecuteProfile
-from informatica_plugin.operators.execute_scorecard import ExecuteScorecard
+from InformaticaPlugin.operators.execute_profile import ExecuteProfile
+from InformaticaPlugin.operators.execute_scorecard import ExecuteScorecard
 
 
 class InformaticaPlugin(AirflowPlugin):

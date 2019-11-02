@@ -22,14 +22,16 @@ with open(version_file, 'rb') as f:
             if not m:
                result_search = _version_re.search(line)
                version = result_search.group(1)
-               print("version is >" + version + "<.")
+               version = version.strip('\"')
+#               print("version is >" + version + "<.")
                main_version, sub_version, fix_version = version.split(".")
+#               print("fix_version is >" + fix_version +"<.")
                fix_number = int(fix_version) + 1
                new_version = main_version +"." + sub_version + "." + str(fix_number)
-               print("version will be >" + new_version + "<.")
+#               print("version will be >" + new_version + "<.")
 
                with open(tmp_version_file, 'wb') as t:
-                    out_line ='__version__ = ' + new_version + '\n'
+                    out_line ='__version__ = "' + new_version + '"\n'
                     t.write(out_line.encode('utf-8'))
 
 setuptools.setup(
@@ -42,6 +44,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url='https://github.com/jacbeekers/informatica-airflow-plugin',
     packages=setuptools.find_packages(),
+    install_requires=[
+        'devops-informatica-tools',
+    ],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

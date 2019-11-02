@@ -1,7 +1,8 @@
 from airflow.models import BaseOperator
-from airflow import utils as airflow_utils
+from airflow import utils as airflow_utils, AirflowException
 
 from execution import runMapping
+
 
 class ExecuteMapping(BaseOperator):
 
@@ -19,6 +20,14 @@ class ExecuteMapping(BaseOperator):
         print("task id: " + self.task_id)
         print("application_name: " + self.application_name)
         print("mapping_name: " + self.mapping_name)
-        run_mapping = runMapping
-        run_mapping.ExecuteInformaticaMapping.runit("-a " + self.application_name
-                                                    + " -m " + self.mapping_name)
+        arguments = [
+            "-a",
+            self.application_name,
+            "-m",
+            self.mapping_name,
+            # TODO: the others to be added
+        ]
+        infa = runMapping.ExecuteInformaticaMapping(arguments, False)
+        result = infa.runit(infa.arguments)
+        if result.rc != 0:
+            raise AirflowException("RunMapping failed.")

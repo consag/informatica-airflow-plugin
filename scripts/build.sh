@@ -30,8 +30,8 @@ if [ $rc -eq 0 ] ; then
    if [ -f temp/_tmp_version.tmp ] ; then
       cp -p temp/_tmp_version.tmp plugins/__init__.py
       git add plugins/__init__.py
-      git commit -m "$(cat plugins/__init__.py) uploaded to pypi."
-      git push
+      git commit -m "$(cat plugins/__init__.py) now on test.pypi"
+      #git push
    else
       echo "new version file not found. version number not changed in git."
    fi
