@@ -1,5 +1,5 @@
 --extra-index-url https://testpypi.python.org/pypi
-informatica-airflow-plugin>=0.1.6
+informatica-airflow-plugin>=0.1.7
 Blueprints==2.3.0.2
 cryptography==2.8
 devops-informatica-tools>=0.10.5

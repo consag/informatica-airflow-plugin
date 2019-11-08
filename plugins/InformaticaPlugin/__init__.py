@@ -6,6 +6,7 @@ from InformaticaPlugin.operators.execute_mapping import ExecuteMapping
 # Defining the plugin class
 from InformaticaPlugin.operators.execute_profile import ExecuteProfile
 from InformaticaPlugin.operators.execute_scorecard import ExecuteScorecard
+from InformaticaPlugin.operators.execute_workflow import ExecuteWorkflow
 
 
 class InformaticaPlugin(AirflowPlugin):
@@ -13,7 +14,8 @@ class InformaticaPlugin(AirflowPlugin):
     operators = [
         ExecuteMapping,
         ExecuteProfile,
-        ExecuteScorecard
+        ExecuteScorecard,
+        ExecuteWorkflow
     ]
     hooks = []
     executors = []

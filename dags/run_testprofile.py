@@ -1,16 +1,12 @@
 """
- Definition to run a test mapping
+ Definition to run a test profile
 """
 
-from __future__ import division, absolute_import, print_function
-
 from datetime import datetime, timedelta
-
 from airflow import DAG
+from InformaticaPlugin import ExecuteProfile
 
-from InformaticaPlugin import ExecuteMapping
-
-dag_id = "run_mapping"
+dag_id = "run_profile"
 schedule_interval = None
 
 default_args = {
@@ -24,15 +20,14 @@ default_args = {
 }
 
 dag = DAG(
-    'run_testmapping',
-    start_date=datetime(2019, 11, 1),
+    'run_testprofile',
+    start_date=datetime(2019, 11, 7),
     schedule_interval=schedule_interval,
     default_args=default_args)
 
-mapping = ExecuteMapping(
-    task_id = "task_testmapping",
-    application_name ="APP_TestScheduler",
-    mapping_name = "m_SchedulerTest1",
+mapping = ExecuteProfile(
+    task_id = "task_testprofile",
+    profile_path = "/SchedulerDemo/Profile_SchedulerTest1",
     dag=dag
 )
 

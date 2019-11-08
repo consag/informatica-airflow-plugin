@@ -1,16 +1,12 @@
 """
- Definition to run a test mapping
+ Definition to run a test workflow
 """
 
-from __future__ import division, absolute_import, print_function
-
 from datetime import datetime, timedelta
-
 from airflow import DAG
+from InformaticaPlugin import ExecuteWorkflow
 
-from InformaticaPlugin import ExecuteMapping
-
-dag_id = "run_mapping"
+dag_id = "run_workflow"
 schedule_interval = None
 
 default_args = {
@@ -24,15 +20,15 @@ default_args = {
 }
 
 dag = DAG(
-    'run_testmapping',
+    'run_testworkflow',
     start_date=datetime(2019, 11, 1),
     schedule_interval=schedule_interval,
     default_args=default_args)
 
-mapping = ExecuteMapping(
-    task_id = "task_testmapping",
+mapping = ExecuteWorkflow(
+    task_id = "task_testworkflow",
     application_name ="APP_TestScheduler",
-    mapping_name = "m_SchedulerTest1",
+    workflow_name = "wf_TestHumanTaskWorkflow",
     dag=dag
 )
 
