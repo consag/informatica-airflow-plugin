@@ -6,7 +6,6 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from InformaticaPlugin import ExecuteWorkflow
 
-dag_id = "run_workflow"
 schedule_interval = None
 
 default_args = {
@@ -25,7 +24,7 @@ dag = DAG(
     schedule_interval=schedule_interval,
     default_args=default_args)
 
-mapping = ExecuteWorkflow(
+workflow = ExecuteWorkflow(
     task_id = "task_testworkflow",
     application_name ="APP_TestScheduler",
     workflow_name = "wf_TestHumanTaskWorkflow",

@@ -22,7 +22,7 @@ class ExecuteScorecard(BaseOperator):
             self.scorecard_path,
             # TODO: the others to be added
         ]
-        infa = runScorecard.ExecuteInformaticaProfile(arguments, False)
+        infa = runScorecard.ExecuteInformaticaScorecard(arguments, False)
         result = infa.runit(infa.arguments)
         if result.rc != 0:
             raise AirflowException("RunScorecard failed.")

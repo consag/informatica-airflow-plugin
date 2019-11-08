@@ -6,7 +6,6 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from InformaticaPlugin import ExecuteProfile
 
-dag_id = "run_profile"
 schedule_interval = None
 
 default_args = {
@@ -21,13 +20,13 @@ default_args = {
 
 dag = DAG(
     'run_testprofile',
-    start_date=datetime(2019, 11, 7),
+    start_date=datetime(2019, 11, 1),
     schedule_interval=schedule_interval,
     default_args=default_args)
 
-mapping = ExecuteProfile(
+profile = ExecuteProfile(
     task_id = "task_testprofile",
-    profile_path = "/SchedulerDemo/Profile_SchedulerTest1",
+    profile_path = "/SchedulerTest/Profile_SchedulerTest",
     dag=dag
 )
 

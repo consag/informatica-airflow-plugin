@@ -3,6 +3,7 @@ from airflow import utils as airflow_utils, AirflowException
 
 from execution import runProfile
 
+
 class ExecuteProfile(BaseOperator):
 
     @airflow_utils.apply_defaults
@@ -25,4 +26,4 @@ class ExecuteProfile(BaseOperator):
         infa = runProfile.ExecuteInformaticaProfile(arguments, False)
         result = infa.runit(infa.arguments)
         if result.rc != 0:
-            raise AirflowException("RunProfile failed.")
+            raise AirflowException("RunMapping failed.")

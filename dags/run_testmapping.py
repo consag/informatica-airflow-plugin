@@ -2,15 +2,10 @@
  Definition to run a test mapping
 """
 
-from __future__ import division, absolute_import, print_function
-
 from datetime import datetime, timedelta
-
 from airflow import DAG
-
 from InformaticaPlugin import ExecuteMapping
 
-dag_id = "run_mapping"
 schedule_interval = None
 
 default_args = {

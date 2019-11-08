@@ -6,7 +6,6 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from InformaticaPlugin import ExecuteScorecard
 
-dag_id = "run_scorecard"
 schedule_interval = None
 
 default_args = {
@@ -25,7 +24,7 @@ dag = DAG(
     schedule_interval=schedule_interval,
     default_args=default_args)
 
-mapping = ExecuteScorecard(
+scorecard = ExecuteScorecard(
     task_id = "task_testscorecard",
     scorecard_path = "/SchedulerDemo/sc_SchedulerTest1",
     dag=dag
