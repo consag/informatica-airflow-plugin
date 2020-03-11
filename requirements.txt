@@ -1,10 +1,10 @@
 --extra-index-url https://testpypi.python.org/pypi
 informatica-airflow-plugin>=0.1.10
 cryptography==2.8
-devops-informatica-tools>=1.1.1
+devops-informatica-tools>=1.1.2
 marshmallow==2.19.5
 marshmallow-enum==1.5.1
 marshmallow-sqlalchemy==0.18.0
 pycryptodome==3.9.0
 repositorytools==4.2.5
-apache-airflow>=1.10.9
+apache-airflow==1.10.9
