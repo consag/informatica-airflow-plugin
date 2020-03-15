@@ -2,10 +2,11 @@
 informatica-airflow-plugin>=0.1.11
 Blueprints==2.3.0.2
 cryptography==2.8
-devops-informatica-tools>=0.11.2
+devops-informatica-tools>=1.2.1
 marshmallow==2.19.5
 marshmallow-enum==1.5.1
 marshmallow-sqlalchemy==0.18.0
 pycryptodome==3.9.0
 #repositorytools==4.2.5
+apache-airflow==1.10.9
 
