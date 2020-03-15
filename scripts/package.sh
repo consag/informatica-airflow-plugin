@@ -1,3 +1,4 @@
+source venv/bin/activate
 alias python=python3
 ##
 echo "Uploading to the real pypi !!!"
