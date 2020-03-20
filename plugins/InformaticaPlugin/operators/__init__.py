@@ -3,4 +3,6 @@ available_arguments = {
     ,"mapping_name": "-m"
     ,"os_profile": "-f"
     ,"as_is_arguments": "-x"
+    ,"profile_path": "-p"
+    ,"scorecard_path": "-s"
 }

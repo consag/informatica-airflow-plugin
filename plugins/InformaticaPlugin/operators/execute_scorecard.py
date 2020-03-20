@@ -8,7 +8,7 @@ import os
 class ExecuteScorecard(BaseOperator):
 
     @airflow_utils.apply_defaults
-    def __init__(self, scorecard_path, **kwargs):
+    def __init__(self, **kwargs):
         self.infa_arguments = []
         self.pre_command = None
         for key, value in kwargs.items():
