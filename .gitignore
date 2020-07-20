@@ -106,3 +106,6 @@ devops-informatica-tools
 
 # mypy
 .mypy_cache/
+
+*.result
+
