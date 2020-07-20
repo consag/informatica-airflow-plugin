@@ -1,3 +1,5 @@
+import pprint
+
 from airflow.models import BaseOperator
 from airflow import utils as airflow_utils, AirflowException
 
@@ -32,7 +34,7 @@ class ExecuteScorecard(BaseOperator):
         else:
             print("pre_command: " + self.pre_command)
 
-        infa = runScorecard.ExecuteInformaticaScorecard(self.infa_arguments, log_on_console=False,
+        infa = runScorecard.ExecuteInformaticaScorecard(self.infa_arguments, log_on_console=True,
                                                         pre_command=self.pre_command)
 
         result = infa.runit(infa.arguments)
