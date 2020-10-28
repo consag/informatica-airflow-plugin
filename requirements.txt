@@ -1,7 +1,7 @@
 --extra-index-url https://testpypi.python.org/pypi
 informatica-airflow-plugin>=0.5.8
 #Blueprints==2.3.0.2
-cryptography==2.8
+cryptography>=3.2
 devops-informatica-tools>=1.2.22
 marshmallow==2.19.5
 marshmallow-enum==1.5.1
