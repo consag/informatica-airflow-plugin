@@ -8,4 +8,4 @@ marshmallow-enum==1.5.1
 marshmallow-sqlalchemy==0.18.0
 pycryptodome==3.9.0
 #repositorytools==4.2.5
-apache-airflow==1.10.11
+apache-airflow==1.10.14
